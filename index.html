@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Hangout Boston</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -11,7 +10,54 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+    <body class="container">
+
+<div class="topOfPage">
+    <h1>Hangout Boston</h1>
+  <p>Introduction for Hangout Boston, directcions on what to do</p>
+    <h3 id="message"></h3>
+  </div>
+
+
+  <div class="row">
+  <form id="sign-up" class="col-md-6 mb-5">
+  <h2>Sign Up</h2>
+  <input class="form-control mb-2" type="email" name="credentials[email]" placeholder="Email">
+  <input class="form-control mb-2" type="password" name="credentials[password]" placeholder="Password">
+  <input class="form-control mb-2" type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+  <button class="btn btn-primary" type="submit">Sign Up!</button>
+</form>
+
+<form id="sign-in" class="col-md-7">
+  <h2>Sign In</h2>
+  <input class="form-control mb-2" type="email" name="credentials[email]" placeholder="Email">
+  <input class="form-control mb-2" type="password" name="credentials[password]" placeholder="Password">
+  <button class="btn btn-primary" type="submit">Please Sign In!</button>
+</form>
+</div>
+
+<form id="changePassword" class="col-md-6 mb-5 hide">
+  <div class="row">
+<h2>Change Password</h2>
+  <input class="form-control mb-2" type="password" name="passwords[old]" placeholder="Old Password">
+  <input class="form-control mb-2" type="password" name="passwords[new]" placeholder="New Password">
+  <button class="btn btn-primary" type="submit">Change Password</button>
+</div>
+</form>
+
+<form id="sign-out" class="hide">
+  <h2>Sign Out</h2>
+  <button type="submit">Sign Out</button>
+</form>
+
+  </div>
+<br></br>
+  <div class="container">
+    <h3 id="messageTwo"></h3>
+      <h2 id="messageFour"></h2>
+  <br>
+
+</br>
+</div>
+</body>
 </html>
