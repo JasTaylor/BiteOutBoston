@@ -39,10 +39,35 @@ const onSignOut = event => {
     .then(ui.signOutSuccessful)
     .catch(ui.signOutFailure)
 }
+const onGetRestaurants = (event) => {
+  event.preventDefault()
+  api.getRestaurants()
+    .then(ui.getRestaurantsSuccess)
+    .catch(ui.failure)
+}
 
+const onClearRestaurants = (event) => {
+  event.preventDefault()
+  ui.clearRestaurants()
+}
+
+const onDeleteRestaurant = (event) => {
+  event.preventDefault()
+  const restaurantId = $(event.target).closest('section').data('id')
+  api.deleteRestaurant(restaurantId)
+    .then(() => onGetRestaurants(event))
+    .catch(ui.failure)
+}
+
+const addHandlers = () => {
+  $('#getRestaurantsButton').on('click', onGetRestaurants)
+  $('#clearRestaurantsButton').on('click', onClearRestaurants)
+  $('.content').on('click', '.delete-restaurant', onDeleteRestaurant)
+}
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  addHandlers
 }

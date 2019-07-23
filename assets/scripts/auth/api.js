@@ -37,9 +37,25 @@ const signOut = function (formData) {
     }
   })
 }
+
+const getRestaurants = function () {
+  return $.ajax({
+    url: config.apiUrl + '/restaurants'
+  })
+}
+
+const deleteRestaurant = (restaurantId) => {
+  return $.ajax({
+    url: config.apiUrl + '/restaurants/' + restaurantId,
+    method: 'DELETE'
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  getRestaurants,
+  deleteRestaurant
 }

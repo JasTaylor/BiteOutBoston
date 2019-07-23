@@ -1,0 +1,21 @@
+
+{{#each restaurants as |restaurant|}}
+  {{log restaurant}}
+  <section data-id="{{restaurant.id}}">
+    <h6>Name:</h6>
+    <h3>
+      {{restaurant.title}}
+    </h2>
+    <h6>Description:</h6>
+    <p>
+      {{#if restaurant.description}}
+        {{restaurant.description}}
+      {{else}}
+        No description provided.
+      {{/if}}
+    </p>
+    <button type="submit" class="btn btn-danger delete-restaurant">Delete</button>
+    <!-- {{> partial}} -->
+  </section>
+
+{{/each}}

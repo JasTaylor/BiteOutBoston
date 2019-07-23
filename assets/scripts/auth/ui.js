@@ -1,18 +1,26 @@
 'use strict'
 const store = require('../store')
-const authEvents = require('./events.js')
-const api = require('./api')
+const showRestaurantsTemplate = require('../templates/helpers/restaurant-listing.handlebars')
 
 const successMessage = message => {
   $('#message').text(message)
+  $('#message').removeClass('failure')
+  $('#message').addClass('success')
+  $('#changePassword').removeClass('hide')
+  $('#sign-out').removeClass('hide')
+  $('#sign-up').addClass('hide')
+  $('#sign-in').addClass('hide')
   $('form').trigger('reset')
 }
 const failureMessage = message => {
   $('#message').text(message)
+  $('#message').removeClass('success')
+  $('#message').addClass('failure')
   $('form').trigger('reset')
 }
 
 const signUpSuccessful = responseData => {
+  store.user = responseData.user
   $('#message').text('You have signed up succesfully, please now sign in and have fun!')
 }
 
@@ -21,6 +29,7 @@ const signUpFailure = () => {
 }
 
 const signInSuccessful = responseData => {
+  store.user = responseData.user
   successMessage('You have signed in, have fun!')
 }
 
@@ -42,6 +51,19 @@ const signOutFailure = () => {
   failureMessage('Failed to sign out')
 }
 
+const getRestaurantsSuccess = (data) => {
+  console.log(data)
+  const showRestaurantsHtml = showRestaurantsTemplate({ restaurants: data.restaurants })
+  $('.content').html(showRestaurantsHtml)
+}
+
+const clearRestaurants = () => {
+  $('.content').empty()
+}
+
+const failure = (error) => {
+  console.error(error)
+}
 module.exports = {
   signUpSuccessful,
   signUpFailure,
@@ -50,5 +72,8 @@ module.exports = {
   changePasswordSuccessful,
   changePasswordFailure,
   signOutSuccessful,
-  signOutFailure
+  signOutFailure,
+  getRestaurantsSuccess,
+  clearRestaurants,
+  failure
 }
