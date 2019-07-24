@@ -63,11 +63,36 @@ const addHandlers = () => {
   $('#getRestaurantsButton').on('click', onGetRestaurants)
   $('#clearRestaurantsButton').on('click', onClearRestaurants)
   $('.content').on('click', '.delete-restaurant', onDeleteRestaurant)
+  $('.edit').on('submit', '.update-restaurant', onUpdateRestaurant)
 }
+
+const onCreateRestaurant = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  console.log(formData)
+  api.createRestaurant(formData)
+    .then(ui.createRestaurantSuccessful)
+    .catch(ui.createRestaurantFailure)
+}
+
+const onUpdateRestaurant = function (event) {
+  event.preventDefault()
+  const id = $(event.target).closest('section').data('id')
+  const formData = getFormFields(event.target)
+  api.updateRestaurant(formData, id)
+    .then(function (responseData) {
+      onGetRestaurants(event)
+    })
+    .catch(ui.onUpdateArtistFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  addHandlers
+  addHandlers,
+  onCreateRestaurant,
+  onUpdateRestaurant
 }

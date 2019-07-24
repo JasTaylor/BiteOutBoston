@@ -8,6 +8,11 @@ const successMessage = message => {
   $('#message').addClass('success')
   $('#changePassword').removeClass('hide')
   $('#sign-out').removeClass('hide')
+  $('#create-restaurant').removeClass('hide')
+  $('#content').removeClass('hide')
+  $('#getRestaurantsButton').removeClass('hide')
+  $('#clearRestaurantsButton').removeClass('hide')
+  $('#get-clear-rest').removeClass('hide')
   $('#sign-up').addClass('hide')
   $('#sign-in').addClass('hide')
   $('form').trigger('reset')
@@ -44,6 +49,16 @@ const changePasswordFailure = () => {
 }
 const signOutSuccessful = responseData => {
   $('#message').text('You have signed out succesfully')
+  $('#changePassword').addClass('hide')
+  $('#sign-out').addClass('hide')
+  $('#get-clear-rest').addClass('hide')
+  $('#getRestaurantsButton').addClass('hide')
+  $('#messageFour').addClass('hide')
+  $('#sign-up').removeClass('hide')
+  $('#sign-in').removeClass('hide')
+  $('#clearRestaurantsButton').addClass('hide')
+  $('#create-restaurant').addClass('hide')
+  $('#content').addClass('hide')
   $('form').trigger('reset')
 }
 
@@ -64,6 +79,18 @@ const clearRestaurants = () => {
 const failure = (error) => {
   console.error(error)
 }
+
+const createRestaurantSuccessful = () => {
+  $('#messageFour').text('You have created a new restaurant')
+}
+
+const createRestaurantFailure = () => {
+  $('#messageFour').text('You have NOT created a new restaurant')
+}
+
+const onUpdateRestaurantFailure = () => {
+  $('#messageFour').text('Sorry but you have not succesfully updated this restaurant')
+}
 module.exports = {
   signUpSuccessful,
   signUpFailure,
@@ -75,5 +102,8 @@ module.exports = {
   signOutFailure,
   getRestaurantsSuccess,
   clearRestaurants,
-  failure
+  failure,
+  createRestaurantSuccessful,
+  createRestaurantFailure,
+  onUpdateRestaurantFailure
 }

@@ -2,9 +2,9 @@
 {{#each restaurants as |restaurant|}}
   {{log restaurant}}
   <section data-id="{{restaurant.id}}">
-    <h6>Name:</h6>
+    <h6></h6>
     <h3>
-      {{restaurant.title}}
+      {{restaurant.name}}
     </h2>
     <h6>Description:</h6>
     <p>
@@ -13,9 +13,22 @@
       {{else}}
         No description provided.
       {{/if}}
+      {{#if restaurant.location}}
+        {{restaurant.location}}
+      {{else}}
+        No location provided.
+      {{/if}}
     </p>
     <button type="submit" class="btn btn-danger delete-restaurant">Delete</button>
     <!-- {{> partial}} -->
+    <div id ="update">
+    <form id="restaurant">
+      <input type="name" name="restaurant[name]" placeholder="Updated Name" />
+      <input type="location" name="restaurant[location]" placeholder="Updated Location" />
+      <input type="description" name="restaurant[description]" placeholder="Updated Description" />
+      <button class="btn btn-danger update-restaurant" data-id="{{restaurant.id}}">Edit</button>
+    </form>
+    </div>
   </section>
 
 {{/each}}

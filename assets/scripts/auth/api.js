@@ -50,12 +50,34 @@ const deleteRestaurant = (restaurantId) => {
     method: 'DELETE'
   })
 }
-
+const updateRestaurant = (formData, id) => {
+  console.log('api update check')
+  return $.ajax({
+    url: config.apiUrl + '/restaurants/' + id,
+    method: 'PATCH',
+    data: formData,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+const createRestaurant = formData => {
+  return $.ajax({
+    url: config.apiUrl + '/restaurants',
+    method: 'POST',
+    data: formData,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
   getRestaurants,
-  deleteRestaurant
+  deleteRestaurant,
+  createRestaurant,
+  updateRestaurant
 }

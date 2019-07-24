@@ -1,80 +1,82 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Hangout Boston</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container">
+<head>
+  <title>Hangout Boston</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-<div class="topOfPage">
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container">
+
+  <div class="topOfPage">
     <h1>Hangout Boston</h1>
-  <p>Find the best restaurants in Boston for everything from Brunch to Late Night Eats.
-Search thousands of reviews and guides and never have just an average meal again!</p>
-    <h3 id="message"></h3>
+    <p>Find the best restaurants in Boston for everything from Brunch to Late Night Eats.
+      Search thousands of reviews and guides and never have just an average meal again!</p>
   </div>
-
 
   <div class="row">
-  <form id="sign-up" class="col-md-6 mb-5">
-  <h2>Sign Up</h2>
-  <input class="form-control mb-2" type="email" name="credentials[email]" placeholder="Email">
-  <input class="form-control mb-2" type="password" name="credentials[password]" placeholder="Password">
-  <input class="form-control mb-2" type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
-  <button class="btn btn-primary" type="submit">Sign Up!</button>
-</form>
+    <form id="sign-up" class="col-md-6 mb-5">
+      <h2>Sign Up</h2>
+      <input class="form-control mb-2" type="email" name="credentials[email]" placeholder="Email">
+      <input class="form-control mb-2" type="password" name="credentials[password]" placeholder="Password">
+      <input class="form-control mb-2" type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+      <button class="btn btn-primary" type="submit">Sign Up!</button>
+    </form>
 
-<form id="sign-in" class="col-md-7">
-  <h2>Sign In</h2>
-  <input class="form-control mb-2" type="email" name="credentials[email]" placeholder="Email">
-  <input class="form-control mb-2" type="password" name="credentials[password]" placeholder="Password">
-  <button class="btn btn-primary" type="submit">Please Sign In!</button>
-</form>
-</div>
-
-<form id="changePassword" class="col-md-6 mb-5 hide">
-  <div class="row">
-<h2>Change Password</h2>
-  <input class="form-control mb-2" type="password" name="passwords[old]" placeholder="Old Password">
-  <input class="form-control mb-2" type="password" name="passwords[new]" placeholder="New Password">
-  <button class="btn btn-primary" type="submit">Change Password</button>
-</div>
-</form>
-
-<form id="sign-out" class="hide">
-  <h2>Sign Out</h2>
-  <button type="submit">Sign Out</button>
-</form>
-
+    <form id="sign-in" class="col-md-7">
+      <h2>Sign In</h2>
+      <input class="form-control mb-2" type="email" name="credentials[email]" placeholder="Email">
+      <input class="form-control mb-2" type="password" name="credentials[password]" placeholder="Password">
+      <button class="btn btn-primary" type="submit">Please Sign In!</button>
+    </form>
   </div>
-<br></br>
-  <div class="container">
-  <button id="newgame-buttons" class="btn btn-primary hide">New Game</button>
-    <h3 id="messageTwo"></h3>
-      <h2 id="messageFour"></h2>
-    <form>
-<h2 id="messageThree"></h2>
-</form>
-<form>
-<h2 id="messageFour"></h2>
-<nav>
-  <div class="app-name">Restaurants</div>
-  <div class="nav-buttons">
-    <button id="getRestaurantsButton" class="btn btn-info mr-2">Get Restaurants!</button>
-    <button id="clearRestaurantsButton" class="btn btn-outline-info">Clear Restaurant</button>
-  </div>
-</nav>
-<main>
-  <div id="content" class="content"></div>
+
+  <form id="changePassword" class="col-md-6 mb-5 hide">
+    <div class="row">
+      <h2>Change Password</h2>
+      <input class="form-control mb-2" type="password" name="passwords[old]" placeholder="Old Password">
+      <input class="form-control mb-2" type="password" name="passwords[new]" placeholder="New Password">
+      <button class="btn btn-primary" type="submit">Change Password</button>
+    </div>
   </form>
-  <br>
 
-</br>
-</div>
+  <form id="sign-out" class="hide">
+    <h2>Sign Out</h2>
+    <button type="submit">Sign Out</button>
+  </form>
+<h4 id="message"></h4>
+  <br></br>
+  <div class="container">
+    <form>
+      <h2 id="messageFour"></h2>
+      <nav>
+        <div id="get-clear-rest" class="app-name hide">See All Restaurants</div>
+        <div class="nav-buttons">
+          <button id="getRestaurantsButton" class="btn btn-info mr-2 hide">Get Restaurants!</button>
+          <button id="clearRestaurantsButton" class="btn btn-outline-info hide">Clear Restaurant</button>
+        </div>
+      </nav>
+    </form>
+  </div>
+  <div>
+      <form id="create-restaurant" class="container hide">
+          <input type="text" name="restaurant[name]" placeholder="restaurant name">
+          <input type="text" name="restaurant[location]" placeholder="location">
+        <input type="text" name="restaurant[description]" placeholder="description">
+          <input type="text" name="restaurant[cost]" placeholder="$-$$$$ values">
+      <button id="newrest-button" class="btn btn-primary">Add a New Restaurant</button>
+      </form>
+    </div>
+    <main>
+        <div id="content" class="content hide"></div>
+        <div id="edit"></div>
+      </main>
 </body>
+
 </html>
