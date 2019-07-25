@@ -40,18 +40,23 @@ const signOut = function (formData) {
 
 const getRestaurants = function () {
   return $.ajax({
-    url: config.apiUrl + '/restaurants'
+    url: config.apiUrl + '/restaurants',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
 const deleteRestaurant = (restaurantId) => {
   return $.ajax({
     url: config.apiUrl + '/restaurants/' + restaurantId,
-    method: 'DELETE'
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 const updateRestaurant = (formData, restaurantId) => {
-  console.log('api update check')
   return $.ajax({
     url: config.apiUrl + '/restaurants/' + restaurantId,
     method: 'PATCH',
