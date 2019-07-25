@@ -13,6 +13,7 @@
       {{else}}
         No description provided.
       {{/if}}
+      <h6>Location:</h6>
       {{#if restaurant.location}}
         {{restaurant.location}}
       {{else}}
@@ -21,14 +22,13 @@
     </p>
     <button type="submit" class="btn btn-danger delete-restaurant">Delete</button>
     <!-- {{> partial}} -->
-    <div id ="update">
-    <form id="restaurant">
-      <input type="name" name="restaurant[name]" placeholder="Updated Name" />
-      <input type="location" name="restaurant[location]" placeholder="Updated Location" />
-      <input type="description" name="restaurant[description]" placeholder="Updated Description" />
-      <button class="btn btn-danger update-restaurant" data-id="{{restaurant.id}}">Edit</button>
+    <form class="update-restaurant">
+      <h4>Update entry</h4>
+      <input type="text" name="restaurant[name]" placeholder="Updated Name"/>
+      <input type="text" name="restaurant[location]" placeholder="Updated Location"/>
+      <input type="text" name="restaurant[description]" placeholder="Updated Description"/>
+    <button type="submit" class="btn btn-danger update-restaurant" data-id="{{restaurant.id}}">Edit</button>
     </form>
-    </div>
   </section>
 
 {{/each}}

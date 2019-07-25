@@ -50,10 +50,10 @@ const deleteRestaurant = (restaurantId) => {
     method: 'DELETE'
   })
 }
-const updateRestaurant = (formData, id) => {
+const updateRestaurant = (formData, restaurantId) => {
   console.log('api update check')
   return $.ajax({
-    url: config.apiUrl + '/restaurants/' + id,
+    url: config.apiUrl + '/restaurants/' + restaurantId,
     method: 'PATCH',
     data: formData,
     headers: {

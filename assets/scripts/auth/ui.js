@@ -10,6 +10,8 @@ const successMessage = message => {
   $('#sign-out').removeClass('hide')
   $('#create-restaurant').removeClass('hide')
   $('#content').removeClass('hide')
+  $('#update').removeClass('hide')
+  $('.sidenav').removeClass('hide')
   $('#getRestaurantsButton').removeClass('hide')
   $('#clearRestaurantsButton').removeClass('hide')
   $('#get-clear-rest').removeClass('hide')
@@ -59,6 +61,7 @@ const signOutSuccessful = responseData => {
   $('#clearRestaurantsButton').addClass('hide')
   $('#create-restaurant').addClass('hide')
   $('#content').addClass('hide')
+  $('#update').addClass('hide')
   $('form').trigger('reset')
 }
 
@@ -91,6 +94,10 @@ const createRestaurantFailure = () => {
 const onUpdateRestaurantFailure = () => {
   $('#messageFour').text('Sorry but you have not succesfully updated this restaurant')
 }
+
+const onUpdateRestaurantSuccess = () => {
+  $('#messageFour').text('Cant believe it but you totally succesfully updated this restaurant')
+}
 module.exports = {
   signUpSuccessful,
   signUpFailure,
@@ -105,5 +112,6 @@ module.exports = {
   failure,
   createRestaurantSuccessful,
   createRestaurantFailure,
-  onUpdateRestaurantFailure
+  onUpdateRestaurantFailure,
+  onUpdateRestaurantSuccess
 }

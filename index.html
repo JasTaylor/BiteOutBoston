@@ -18,6 +18,7 @@
     <h1>Hangout Boston</h1>
     <p>Find the best restaurants in Boston for everything from Brunch to Late Night Eats.
       Search thousands of reviews and guides and never have just an average meal again!</p>
+<h4 id="message"></h4>
   </div>
 
   <div class="row">
@@ -29,28 +30,32 @@
       <button class="btn btn-primary" type="submit">Sign Up!</button>
     </form>
 
-    <form id="sign-in" class="col-md-7">
+    <form id="sign-in" class="col-md-6 mb-5">
       <h2>Sign In</h2>
       <input class="form-control mb-2" type="email" name="credentials[email]" placeholder="Email">
       <input class="form-control mb-2" type="password" name="credentials[password]" placeholder="Password">
       <button class="btn btn-primary" type="submit">Please Sign In!</button>
+
+      <nav>
     </form>
   </div>
-
   <form id="changePassword" class="col-md-6 mb-5 hide">
     <div class="row">
-      <h2>Change Password</h2>
+      <h4>Change Password</h4>
+      <div id="dropdown">
       <input class="form-control mb-2" type="password" name="passwords[old]" placeholder="Old Password">
       <input class="form-control mb-2" type="password" name="passwords[new]" placeholder="New Password">
       <button class="btn btn-primary" type="submit">Change Password</button>
     </div>
+  </div>
   </form>
 
   <form id="sign-out" class="hide">
     <h2>Sign Out</h2>
     <button type="submit">Sign Out</button>
   </form>
-<h4 id="message"></h4>
+
+</nav>
   <br></br>
   <div class="container">
     <form>
@@ -64,6 +69,8 @@
       </nav>
     </form>
   </div>
+
+
   <div>
       <form id="create-restaurant" class="container hide">
           <input type="text" name="restaurant[name]" placeholder="restaurant name">
@@ -73,10 +80,12 @@
       <button id="newrest-button" class="btn btn-primary">Add a New Restaurant</button>
       </form>
     </div>
+
+
+
     <main>
         <div id="content" class="content hide"></div>
-        <div id="edit"></div>
-      </main>
+    </main>
 </body>
 
 </html>

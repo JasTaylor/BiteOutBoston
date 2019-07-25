@@ -6,6 +6,18 @@
   padding: 20px;
 }
 
+body {
+  color: white;
+  text-align: center;
+  background: url("https://i.imgur.com/e5EV7Kx.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h1 {
+text-decoration-color: #3791D1;
+}
 .success {
   background-color: #080;
 }
@@ -14,22 +26,8 @@
   background-color: #F00;
 }
 
-.box {
-  background-color: orange;
-  border: 1px solid black;
-  color: black;
-  display: grid;
-  height: 140px;
-  text-align: center;
-  width: 140px;
-}
-
 .hide {
   display: none;
-}
-
-.tiles {
-  display: block;
 }
 
 ul {
@@ -40,11 +38,21 @@ ul {
 }
 
 li {
-  float: left;
+  float: center;
 }
 
 li a {
   display: block;
   padding: 8px;
   background-color: #dddddd;
+}
+
+.sign-in {
+  text-align: center;
+}
+
+
+.content {
+  color: blue;
+  background-color: white;
 }
