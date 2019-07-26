@@ -35,51 +35,53 @@
       <input class="form-control mb-2" type="email" name="credentials[email]" placeholder="Email">
       <input class="form-control mb-2" type="password" name="credentials[password]" placeholder="Password">
       <button class="btn btn-primary" type="submit">Please Sign In!</button>
-
-      <nav>
     </form>
   </div>
-  <form id="changePassword" class="col-md-6 mb-5 hide">
-    <div class="row">
+
+  <div class="row">
+
+  <form id="changePassword" class="col-md-4 hide">
       <h4>Change Password</h4>
-      <div id="dropdown">
-      <input class="form-control mb-2" type="password" name="passwords[old]" placeholder="Old Password">
-      <input class="form-control mb-2" type="password" name="passwords[new]" placeholder="New Password">
+      <input type="password" name="passwords[old]" placeholder="Old Password">
+      <input type="password" name="passwords[new]" placeholder="New Password">
       <button class="btn btn-primary" type="submit">Change Password</button>
-    </div>
+  </form>
+
+<div>
+  <form id="sign-out" class="col-md-4 mb-9 hide">
+    <h4>Sign Out</h4>
+    <button class="btn btn-primary" type="submit">Sign Out</button>
+  </form>
+</div>
+
+<div>
+    <form id="create-restaurant" class="col-md-4 container hide">
+      <h4>Create Restaurant</h4>
+        <input type="text" name="restaurant[name]" placeholder="restaurant name">
+        <input type="text" name="restaurant[location]" placeholder="location">
+      <input type="text" name="restaurant[description]" placeholder="description">
+        <input type="text" name="restaurant[cost]" placeholder="$-$$$$ values">
+    <button id="newrest-button" class="btn btn-primary">Add a New Restaurant</button>
+    </form>
   </div>
-  </form>
 
-  <form id="sign-out" class="hide">
-    <h2>Sign Out</h2>
-    <button type="submit">Sign Out</button>
-  </form>
+</div>
 
-</nav>
-  <br></br>
+
+
   <div class="container">
     <form>
-      <h2 id="messageFour"></h2>
+<h2 id="messageFour"></h2>
       <nav>
-        <div id="get-clear-rest" class="app-name hide">See All Restaurants</div>
+        <div id="get-clear-rest" class="app-name hide col-md-6 mb-5 "></div>
         <div class="nav-buttons">
-          <button id="getRestaurantsButton" class="btn btn-info mr-2 hide">Get Restaurants!</button>
-          <button id="clearRestaurantsButton" class="btn btn-outline-info hide">Clear Restaurant</button>
+          <button id="getRestaurantsButton" class="btn btn-info form-control mb-2 hide">Get Restaurants You Have Created!</button>
+          <button id="clearRestaurantsButton" class="btn btn-info hide form-control mb-2">Clear Restaurants</button>
         </div>
       </nav>
     </form>
   </div>
 
-
-  <div>
-      <form id="create-restaurant" class="container hide">
-          <input type="text" name="restaurant[name]" placeholder="restaurant name">
-          <input type="text" name="restaurant[location]" placeholder="location">
-        <input type="text" name="restaurant[description]" placeholder="description">
-          <input type="text" name="restaurant[cost]" placeholder="$-$$$$ values">
-      <button id="newrest-button" class="btn btn-primary">Add a New Restaurant</button>
-      </form>
-    </div>
 
 
 

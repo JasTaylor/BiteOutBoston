@@ -19,6 +19,12 @@
       {{else}}
         No location provided.
       {{/if}}
+      <h6>Cost:</h6>
+      {{#if restaurant.cost}}
+        {{restaurant.cost}}
+      {{else}}
+        No cost provided.
+      {{/if}}
     </p>
     <button type="submit" class="btn btn-danger delete-restaurant">Delete</button>
     <!-- {{> partial}} -->

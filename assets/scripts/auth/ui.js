@@ -85,18 +85,22 @@ const failure = (error) => {
 
 const createRestaurantSuccessful = () => {
   $('#messageFour').text('You have created a new restaurant')
+  $('form').trigger('reset')
 }
 
 const createRestaurantFailure = () => {
   $('#messageFour').text('You have NOT created a new restaurant')
+  $('form').trigger('reset')
 }
 
 const onUpdateRestaurantFailure = () => {
   $('#messageFour').text('Sorry but you have not succesfully updated this restaurant')
+  $('form').trigger('reset')
 }
 
 const onUpdateRestaurantSuccess = () => {
   $('#messageFour').text('Cant believe it but you totally succesfully updated this restaurant')
+  $('form').trigger('reset')
 }
 module.exports = {
   signUpSuccessful,
