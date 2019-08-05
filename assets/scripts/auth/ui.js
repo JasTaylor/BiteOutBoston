@@ -29,25 +29,31 @@ const failureMessage = message => {
 const signUpSuccessful = responseData => {
   store.user = responseData.user
   $('#message').text('You have signed up succesfully, please now sign in and have fun!')
+  $('form').trigger('reset')
 }
 
 const signUpFailure = () => {
   failureMessage('You have not signed up, please try again.')
+  $('form').trigger('reset')
 }
 
 const signInSuccessful = responseData => {
   store.user = responseData.user
   successMessage('You have signed in, have fun!')
+  $('form').trigger('reset')
 }
 
 const signInFailure = () => {
   failureMessage('You have not signed in, please try again.')
+  $('form').trigger('reset')
 }
 const changePasswordSuccessful = responseData => {
   successMessage('You have changed your password succesfully')
+  $('form').trigger('reset')
 }
 const changePasswordFailure = () => {
   failureMessage('Failed to change password')
+  $('form').trigger('reset')
 }
 const signOutSuccessful = responseData => {
   $('#message').text('You have signed out succesfully')
@@ -67,10 +73,10 @@ const signOutSuccessful = responseData => {
 
 const signOutFailure = () => {
   failureMessage('Failed to sign out')
+  $('form').trigger('reset')
 }
 
 const getRestaurantsSuccess = (data) => {
-  console.log(data)
   const showRestaurantsHtml = showRestaurantsTemplate({ restaurants: data.restaurants })
   $('.content').html(showRestaurantsHtml)
 }
@@ -79,8 +85,9 @@ const clearRestaurants = () => {
   $('.content').empty()
 }
 
-const failure = (error) => {
-  console.error(error)
+const failure = () => {
+  $('#messageFour').text('You have failed to delete a restaurant')
+  $('form').trigger('reset')
 }
 
 const createRestaurantSuccessful = () => {
