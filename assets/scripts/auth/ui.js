@@ -9,6 +9,8 @@ const successMessage = message => {
   $('#changePassword').removeClass('hide')
   $('#sign-out').removeClass('hide')
   $('#create-restaurant').removeClass('hide')
+  $('.cpModal').removeClass('hide')
+  $('#modalButton').addClass('hide')
   $('#content').removeClass('hide')
   $('#update').removeClass('hide')
   $('.sidenav').removeClass('hide')
@@ -41,6 +43,10 @@ const signInSuccessful = responseData => {
   store.user = responseData.user
   successMessage('You have signed in, have fun!')
   $('form').trigger('reset')
+  $('.myModal').modal('hide')
+  $('#guest').addClass('hide')
+  $('#cpModal').removeClass('hide')
+  $('.bar').addClass('hide')
 }
 
 const signInFailure = () => {
@@ -68,6 +74,9 @@ const signOutSuccessful = responseData => {
   $('#create-restaurant').addClass('hide')
   $('#content').addClass('hide')
   $('#update').addClass('hide')
+  $('#modalButton').removeClass('hide')
+  $('#guest').removeClass('hide')
+  $('.cpModal').addClass('hide')
   $('form').trigger('reset')
 }
 

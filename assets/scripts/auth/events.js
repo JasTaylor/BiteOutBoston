@@ -22,6 +22,19 @@ const onSignIn = event => {
     .catch(ui.signInFailure)
 }
 
+const onGuest = event => {
+  event.preventDefault()
+  const guestInfo = {
+    'credentials': {
+      'email': 'j@j',
+      'password': 'j'
+    }
+  }
+  api.signIn(guestInfo)
+    .then(ui.signInSuccessful)
+    .catch(ui.signInFailure)
+}
+
 const onChangePassword = event => {
   event.preventDefault()
   const form = event.target
@@ -92,5 +105,6 @@ module.exports = {
   onSignOut,
   addHandlers,
   onCreateRestaurant,
-  onUpdateRestaurant
+  onUpdateRestaurant,
+  onGuest
 }

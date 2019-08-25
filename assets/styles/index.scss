@@ -2,7 +2,7 @@
 
 body {
   color: white;
-  background: url("https://i.imgur.com/e5EV7Kx.jpg");
+  background: url("https://i.imgur.com/CwD8WYh.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,10 +11,16 @@ body {
 h1 {
   font-weight: bold;
   text-align: center;
+  font-size: 55px;
 }
 
 h6 {
   font-weight: bold;
+}
+
+.modal-content {
+  color: black;
+  background-color: lightblue;
 }
 
 .row {
@@ -26,6 +32,7 @@ h6 {
 .success {
   background-color: #73D4FF;
   color: black;
+  text-align: center;
 }
 
 .failure {
@@ -51,4 +58,21 @@ h6 {
   color: #27167A;
   background-color: #D2E9FA;
   text-align: center;
+}
+
+.rcorners1 {
+  border-radius: 25px;
+}
+
+.homepage {
+  background-color: rgba(0, 15, 180, 0.80);
+}
+
+.rcorners2 {
+  border-radius: 15px;
+}
+
+.topofpage {
+  font-family: 'Lobster', cursive;
+  font-size: 155px;
 }
