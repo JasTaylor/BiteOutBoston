@@ -21,6 +21,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2 rcorners1">
     <a class="navbar-brand" href="#">Sign-in →</a>
+    <a class="navbar-signin hide">Options →</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -80,7 +81,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <h6>*please note that game data will reflect ALL guest user stats*</h6>
+                  <h6>*please note that restaurants will reflect ALL guest user restaurants that have been added*</h6>
                   <button type="button" class="btn btn-primary" data-dismiss="modal">OK!</button>
                   </div>
                 </div>
@@ -92,15 +93,13 @@
         <li class="nav-item">
           <!-- CHANGE PASSWORD Modal -->
         <nav class="container row">
-        <button type="button" class="btn btn-warning cpModal hide mr-3 mb-2 mt-3" data-toggle="modal" data-target="#cpModal">
-          Reset Password
-        </button>
+        <button type="button" class="btn btn-primary cpModal hide mr-3 mb-2 mt-3" data-toggle="modal" data-target="#cpModal">Reset Password</button>
         <!-- Modal -->
         <div class="modal fade" id="cpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="cpModalLabel">Reset Password</h5>
+                <h5 class="modal-title" id="messageSeven" id="cpModalLabel">Reset Password</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -121,9 +120,39 @@
 </li>
 <li class="nav-item">
   <form id="sign-out" class="hide">
-    <button type="submit" class="btn btn-danger mr-3 mt-3">Sign Out</button>
+    <button type="submit" class="btn btn-primary mr-3 mt-3">Sign Out</button>
   </form>
-  <form>
+</li>
+<li class="nav-item">
+<!-- CREATE RESTAURANT modal -->
+<button type="button" class="btn btn-primary hide createRestaurant mr-3 mb-2 mt-3" data-toggle="modal" data-target="#createRestaurant">
+  Add New Restaurant
+</button>
+<!-- Modal -->
+<div class="modal fade" id="createRestaurant" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createRestaurantLabel">Add New Restaurant</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+            <form id="create-restaurant" class="container mb-2">
+                <input class="form-control create mb-2" type="text" name="restaurant[name]" placeholder="Restaurant Name">
+                <input class="form-control create mb-2" type="text" name="restaurant[location]" placeholder="Location">
+                <input class="form-control create mb-2" type="text" name="restaurant[description]" placeholder="Description">
+                <input class="form-control create mb-4" type="text" name="restaurant[cost]" placeholder="Price ($-$$$$)">
+                  <button type="button" class="btn btn-secondary create" data-dismiss="modal">Close</button>
+                  <button id="newrest-button" class="btn btn-primary create">Add a New Restaurant</button>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
 </li>
       </ul>
     </div>
@@ -165,26 +194,6 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-
-
-<div class="row">
-
-  <div><div>
-    <form id="sign-out" class="col-md-3 mb-9 hide">
-    </form>
-  </div>
-  </div>
-<div>
-    <form id="create-restaurant" class="col-md-3 container hide">
-      <h4>Create Restaurant</h4>
-        <input type="text" name="restaurant[name]" placeholder="restaurant name">
-        <input type="text" name="restaurant[location]" placeholder="location"> placeholder="location">
-      <input type="text" name="restaurant[description]" placeholder="description">
-        <input type="text" name="restaurant[cost]" placeholder="$-$$$$ values">
-    <button id="newrest-button" class="btn btn-primary">Add a New Restaurant</button>
-    </form>
-  </div>
-
 </div>
 
   <div class="container">
@@ -194,7 +203,7 @@
         <div id="get-clear-rest" class="app-name hide col-md-6 mb-5 "></div>
         <div class="nav-buttons">
           <button id="getRestaurantsButton" class="btn btn-info form-control mb-2 hide">Get Restaurants You Have Created!</button>
-          <button id="clearRestaurantsButton" class="btn btn-info hide form-control mb-2">Clear Restaurants</button>
+          <button id="clearRestaurantsButton" class="btn btn-info hide form-control mb-2">Hide Restaurant List</button>
         </div>
       </nav>
     </form>

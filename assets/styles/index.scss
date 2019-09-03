@@ -18,6 +18,17 @@ h6 {
   font-weight: bold;
 }
 
+.btn {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.create {
+  padding: auto;
+  width: auto;
+  text-align: left;
+}
+
 .modal-content {
   color: black;
   background-color: lightblue;
@@ -52,6 +63,10 @@ h6 {
 }
 .sign-in {
   text-align: center;
+}
+.navbar-signin {
+  color: white;
+  font-size: 18px;
 }
 
 .content {

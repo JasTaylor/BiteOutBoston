@@ -46,8 +46,12 @@ const signInSuccessful = responseData => {
   $('.myModal').modal('hide')
   $('#guest').addClass('hide')
   $('#cpModal').removeClass('hide')
+  $('#createModal').removeClass('hide')
   $('.bar').addClass('hide')
   $('#carouselExampleCaptions').addClass('hide')
+  $('.createRestaurant').removeClass('hide')
+  $('.navbar-signin').removeClass('hide')
+  $('.navbar-brand').addClass('hide')
 }
 
 const signInFailure = () => {
@@ -55,7 +59,7 @@ const signInFailure = () => {
   $('form').trigger('reset')
 }
 const changePasswordSuccessful = responseData => {
-  successMessage('You have changed your password succesfully')
+  $('#messageSeven').text('You have changed your password succesfully')
   $('form').trigger('reset')
 }
 const changePasswordFailure = () => {
@@ -78,6 +82,7 @@ const signOutSuccessful = responseData => {
   $('#modalButton').removeClass('hide')
   $('#guest').removeClass('hide')
   $('.cpModal').addClass('hide')
+  $('#carouselExampleCaptions').removeClass('hide')
   $('form').trigger('reset')
 }
 
@@ -111,12 +116,11 @@ const createRestaurantFailure = () => {
 }
 
 const onUpdateRestaurantFailure = () => {
-  $('#messageFour').text('Sorry but you have not succesfully updated this restaurant')
+  $('#messageFour').text('Something went wrong, you have not updated this restaurant')
   $('form').trigger('reset')
 }
 
 const onUpdateRestaurantSuccess = () => {
-  $('#messageFour').text('Cant believe it but you totally succesfully updated this restaurant')
   $('form').trigger('reset')
 }
 module.exports = {
