@@ -6,7 +6,7 @@ const hideMessaging = function () {
   setTimeout(function () {
     $('#message').text('')
     $('#messageFour').hide('')
-  }, 3000
+  }, 5000
   )
 }
 const successMessage = message => {
@@ -90,6 +90,7 @@ const signOutSuccessful = responseData => {
   $('#guest').removeClass('hide')
   $('.cpModal').addClass('hide')
   $('#carouselExampleCaptions').removeClass('hide')
+  $('.createRestaurant').addClass('hide')
   $('form').trigger('reset')
 }
 
@@ -116,6 +117,7 @@ const createRestaurantSuccessful = () => {
   $('#messageFour').text('You have created a new restaurant')
   $('form').trigger('reset')
   $('.modal').modal('hide')
+  hideMessaging()
 }
 
 const createRestaurantFailure = () => {
