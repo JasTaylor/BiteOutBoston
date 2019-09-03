@@ -2,6 +2,13 @@
 const store = require('../store')
 const showRestaurantsTemplate = require('../templates/helpers/restaurant-listing.handlebars')
 
+const hideMessaging = function () {
+  setTimeout(function () {
+    $('#message').text('')
+    $('#messageFour').hide('')
+  }, 3000
+  )
+}
 const successMessage = message => {
   $('#message').text(message)
   $('#message').removeClass('failure')
@@ -108,6 +115,7 @@ const failure = () => {
 const createRestaurantSuccessful = () => {
   $('#messageFour').text('You have created a new restaurant')
   $('form').trigger('reset')
+  $('.modal').modal('hide')
 }
 
 const createRestaurantFailure = () => {
@@ -138,5 +146,6 @@ module.exports = {
   createRestaurantSuccessful,
   createRestaurantFailure,
   onUpdateRestaurantFailure,
-  onUpdateRestaurantSuccess
+  onUpdateRestaurantSuccess,
+  hideMessaging
 }
