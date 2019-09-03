@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BiteOut Boston</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container">
+
+  <div class="topofpage">
+    <h1>BiteOut Boston</h1>
+<h4 id="message"></h4>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2 rcorners1">
+    <a class="navbar-brand" href="#">Sign-in →</a>
+    <a class="navbar-signin hide">Options →</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <button id="modalButton" type="button" class="mt-1 mb-1 mr-2 btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal">
+            Sign-Up / Sign-In
+          </button>
+          <div class="modal fade myModal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h6 id="messageSeven"></h6>
+                  <h5 class="modal-title" id="exampleModalLabel">Sign-Up & Sign-In</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="sign-in" class="col-md-6">
+                    <h4>Sign In</h4>
+                    <input class="form-control" type="email" name="credentials[email]" placeholder="Email" autocomplete="email">
+                    <input class="form-control" type="password" name="credentials[password]" placeholder="Password" autocomplete="current-password">
+                    <button class="btn btn-dark btn-block">Submit</button>
+                  </form>
+                  <form id="sign-up" class="col-md-6">
+                    <h4>Sign Up</h4>
+                    <h6 id="messageFive"></h6>
+                    <input class="form-control" type="email" name="credentials[email]" placeholder="Email" autocomplete="email">
+                    <input class="form-control" type="password" name="credentials[password]" placeholder="Password" autocomplete="current-password">
+                    <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" autocomplete="current-password">
+                    <button class="btn btn-dark btn-block">Submit</button>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div id="guest">
+          <button type="button" class="mt-1 mb-1 mr-2 btn btn-outline-warning" data-toggle="modal" data-target="#exampleModalScrollable">
+            Guest Sign-In
+          </button>
+          </div>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalScrollableTitle">You just signed in without signing up!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h6>*please note that restaurants will reflect ALL guest user restaurants that have been added*</h6>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">OK!</button>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+            </div>
+        </li>
+        <li class="nav-item">
+          <!-- CHANGE PASSWORD Modal -->
+        <nav class="container row">
+        <button type="button" class="btn btn-primary cpModal hide mr-3 mb-2 mt-3" data-toggle="modal" data-target="#cpModal">Reset Password</button>
+        <!-- Modal -->
+        <div class="modal fade" id="cpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="messageSeven" id="cpModalLabel">Reset Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="changePassword">
+                  <input class="form-control mb-2" type="password" name="passwords[old]" placeholder="Old Password">
+                  <input class="form-control mb-2" type="password" name="passwords[new]" placeholder="New Password">
+                  <button class="btn btn-primary" type="submit">Change Password</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Exit</button>
+                </form>
+                <br />
+                <h6 id="messageSix"></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+</li>
+<li class="nav-item">
+  <form id="sign-out" class="hide">
+    <button type="submit" class="btn btn-primary mr-3 mt-3">Sign Out</button>
+  </form>
+</li>
+<li class="nav-item">
+<!-- CREATE RESTAURANT modal -->
+<button type="button" class="btn btn-primary hide createRestaurant mr-3 mb-2 mt-3" data-toggle="modal" data-target="#createRestaurant">
+  Add New Restaurant
+</button>
+<!-- Modal -->
+<div class="modal fade" id="createRestaurant" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createRestaurantLabel">Add New Restaurant</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+            <form id="create-restaurant" class="container mb-2">
+                <input class="form-control create mb-2" type="text" name="restaurant[name]" placeholder="Restaurant Name">
+                <input class="form-control create mb-2" type="text" name="restaurant[location]" placeholder="Location">
+                <input class="form-control create mb-2" type="text" name="restaurant[description]" placeholder="Description">
+                <input class="form-control create mb-4" type="text" name="restaurant[cost]" placeholder="Price ($-$$$$)">
+                  <button type="button" class="btn btn-secondary create" data-dismiss="modal">Close</button>
+                  <button id="newrest-button" class="btn btn-primary create">Add a New Restaurant</button>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="bd-example" id="main">
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://i.imgur.com/N3TlOIk.jpg" class="d-block w-100 rcorners1" alt="...">
+        <div class="carousel-caption mb-2">
+          <p class="homepage rcorners2"><strong>  Find the best restaurants in Boston for everything from Brunch to Late Night Eats!  </strong></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://i.imgur.com/hxhFSLl.jpg" class="d-block w-100 rcorners1" alt="...">
+        <div class="carousel-caption mb-4">
+          <p class="homepage rcorners2"><strong>Search thousands of reviews and guides and never have just an average meal again!  </strong></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://i.imgur.com/tRiD9Ud.jpg" class="d-block w-100 rcorners1" alt="...">
+        <div class="carousel-caption mb-2">
+          <p class="homepage rcorners2"><strong>  Boston has lots to offer! Sign-in and have access to reviews from all across the city!  </strong></p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+  <div class="container">
+    <form>
+<h2 id="messageFour"></h2>
+      <nav>
+        <div id="get-clear-rest" class="app-name hide col-md-6 mb-5 "></div>
+        <div class="nav-buttons">
+          <button id="getRestaurantsButton" class="btn btn-info form-control mb-2 hide">Get Restaurants You Have Created!</button>
+          <button id="clearRestaurantsButton" class="btn btn-info hide form-control mb-2">Hide Restaurant List</button>
+        </div>
+      </nav>
+    </form>
+  </div>
+    <main>
+        <div id="content" class="content hide"></div>
+    </main>
+</body>
+<footer>
+  <br />
+  <br />
+  <br />
+  <br />
+</footer>
+
+</html>
