@@ -47,6 +47,7 @@ const signInSuccessful = responseData => {
   $('#guest').addClass('hide')
   $('#cpModal').removeClass('hide')
   $('.bar').addClass('hide')
+  $('#carouselExampleCaptions').addClass('hide')
 }
 
 const signInFailure = () => {
